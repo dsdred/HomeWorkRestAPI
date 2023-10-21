@@ -3,16 +3,16 @@ const { Router } = require("express");
 // создаем объект для работы с группой маршрутов
 const router = new Router();
 
-const productsRouters = require("./products.router");
-const usersRouters = require("./users.router");
-const categoriesRouters = require("./categories.router");
-const cartRouters = require("./cart.router");
-const currenciesRouters = require("./currencies.router");
+const productsRouter = require("./products.router");
+const usersRouter = require("./users.router");
+const categoriesRouter = require("./categories.router");
+const cartRouter = require("./cart.router");
+const currenciesRouter = require("./currencies.router");
 
-router.use("/products", productsRouters);
-router.use("/users", usersRouters);
-router.use("/categories", categoriesRouters);
-router.use("/cart", cartRouters);
-router.use("/currencies", currenciesRouters);
+router.use("/products", productsRouter);
+router.use("/users", usersRouter);
+router.use("/categories", categoriesRouter);
+router.use("/cart", cartRouter);
+router.use("/currencies", currenciesRouter);
 
 module.exports = router;

@@ -9,39 +9,48 @@ const router = new Router();
 // Mock данные https://www.mockaroo.com/
 const currencies = [
   {
-    id: "CZK",
+    id: 1,
+    code: "CZK",
     name: "Koruna",
   },
   {
-    id: "IDR",
+    id: 2,
+    code: "IDR",
     name: "Rupiah",
   },
   {
-    id: "BRL",
+    id: 3,
+    code: "BRL",
     name: "Real",
   },
   {
-    id: "RUB",
+    id: 4,
+    code: "RUB",
     name: "Ruble",
   },
   {
-    id: "CNY",
+    id: 5,
+    code: "CNY",
     name: "Yuan Renminbi",
   },
   {
-    id: "SEK",
+    id: 6,
+    code: "SEK",
     name: "Krona",
   },
   {
-    id: "PHP",
+    id: 7,
+    code: "PHP",
     name: "Peso",
   },
   {
-    id: "EUR",
+    id: 8,
+    code: "EUR",
     name: "Euro",
   },
   {
-    id: "USD",
+    id: 9,
+    code: "USD",
     name: "Dollar",
   },
 ];
@@ -49,9 +58,11 @@ const currencies = [
 router.get("/", (req, res) => {
   res.json(currencies);
 });
-router.get("/:id", (req, res) => {
-  const currencyId = req.params.id;
-  const foundItem = currencies.find((currency) => currency.id === currencyId);
+router.get("/:code", (req, res) => {
+  const currencyCode = req.params.code;
+  const foundItem = currencies.find(
+    (currency) => currency.code === currencyCode
+  );
   res.json(foundItem);
 });
 router.post("/", (req, res) => {
